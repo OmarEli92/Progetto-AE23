@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="eloma"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-09-07 10:29:10 "/>
+        <attribute name="created" value="ZWxvbWE7T01BUjsyMDI0LTA5LTA3OyIxMTozMDoxMCAiOzIwMTQ="/>
+        <attribute name="edited" value="ZWxvbWE7T01BUjsyMDI0LTA5LTA3OyIxMDoyOToxMCAiOzI7MjEzMA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ss, sck, bit, i, stato" type="Integer" array="False" size=""/>
+            <assign variable="stato" expression="0"/>
+            <declare name="byteOutput" type="String" array="False" size=""/>
+            <do expression="ss != 0">
+                <input variable="ss"/>
+            </do>
+            <assign variable="stato" expression="1"/>
+            <assign variable="byteOutput" expression="&quot;&quot;"/>
+            <assign variable="sck" expression="1"/>
+            <for variable="i" start="0" end="7" direction="inc" step="1">
+                <input variable="bit"/>
+                <assign variable="byteOutput" expression="bit &amp; byteOutput"/>
+            </for>
+            <assign variable="stato" expression="2"/>
+            <output expression="byteOutput" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

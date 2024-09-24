@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "author": "OMAR EL IDRISSI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": 81.6, "left": -86.9, "attrs": {} },
+    { "type": "wokwi-ili9341", "id": "lcd1", "top": -167.4, "left": 203.3, "attrs": {} }
+  ],
+  "connections": [
+    [ "nano:11", "lcd1:MOSI", "green", [ "v-28.8", "h183", "v105.6", "h124.8" ] ],
+    [ "nano:10", "lcd1:CS", "green", [ "v-19.2", "h154.3", "v76.8", "h115.2" ] ],
+    [ "nano:5V", "lcd1:VCC", "red", [ "v28.7", "h234.2" ] ],
+    [ "nano:9", "lcd1:D/C", "green", [ "v-48", "h173.6", "v96", "h96" ] ],
+    [ "nano:13", "lcd1:SCK", "green", [ "v42.6", "h441.7" ] ],
+    [ "nano:GND.1", "lcd1:GND", "black", [ "v13.8", "h259.3" ] ],
+    [ "lcd1:MISO", "nano:12", "green", [ "v48", "h-232.41", "v-119.8", "h-163.2" ] ]
+  ],
+  "dependencies": {}
+}

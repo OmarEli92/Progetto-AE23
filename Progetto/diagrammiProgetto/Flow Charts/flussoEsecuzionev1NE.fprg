@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="eloma"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-08-23 10:19:48 "/>
+        <attribute name="created" value="ZWxvbWE7T01BUjsyMDI0LTA4LTIzOyIwOTozODozNSAiOzIwMzM="/>
+        <attribute name="edited" value="ZWxvbWE7T01BUjsyMDI0LTA4LTIzOyIxMDoxOTo0OCAiOzE7MjEzNg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="selezionaSchermo()"/>
+            <if expression="statoSchermo == Sleeping">
+                <then>
+                    <call expression="inviaComando(Ready)"/>
+                    <assign variable="statoSchermo" expression="Ready"/>
+                </then>
+                <else/>
+            </if>
+            <call expression="inviaComando(iniziaTrasmissione)"/>
+            <while expression="datiNonTrasferiti != datiTrasferiti">
+                <call expression="inviaData(dataN)"/>
+                <call expression="mostraDatoRicveuto()"/>
+                <assign variable="datiTrasferiti" expression="datiTrasferiti + 1"/>
+            </while>
+            <call expression="inviaComando(Sleep)"/>
+            <assign variable="statoSchermo" expression="Sleeping"/>
+        </body>
+    </function>
+</flowgorithm>
